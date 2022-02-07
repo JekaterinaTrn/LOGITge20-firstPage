@@ -2,8 +2,17 @@
 
 const myButton = document.querySelector('button');
 const myImage =document.querySelector('img');
+const images = ['pic1', 'pic2', 'pic3', 'pic4', 'pic5'];
 
 myButton.addEventListener('click', () => {
    console.log('click');
-myImage.src = 'images/pic5.jpg';
+// generate a random number from 0 to 4
+
+let randomIndex = Math.floor(Math.random() * images.length);
+console.log(randomIndex);
+
+let randomImagePath = 'images/' + images[randomIndex] + '.jpg';
+console.log(randomImagePath);
+
+myImage.src = randomImagePath;
 });
